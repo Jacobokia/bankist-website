@@ -29,3 +29,25 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+//PAGE NAVIGATION
+
+// document.querySelectorAll('.nav__link').forEach(function(el) {
+//   el.addEventListener('click', function(e) {
+//     e.preventDefault()
+//     const id = this.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+//   })
+// });
+
+//EVENT DELEGATION
+//add the event listener to the parent
+//determine which element triggers the event
+//match the element to the event
+
+document.querySelector('.nav__links').addEventListener('click', function(e) {
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({behavior: 'smooth'});
+  } 
+});
